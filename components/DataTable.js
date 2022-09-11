@@ -11,33 +11,33 @@ import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 const columns = [
-  { id: 'name', label: 'Nombre', minWidth: 170 },
-  { id: 'code', label: 'Postal', minWidth: 100 },
+  { id: 'name', label: 'Nombre', minWidth: 50  , align: 'right'},
+  { id: 'code', label: 'Postal', minWidth: 50 , align: 'right'},
   {
     id: 'population',
     label: 'Poblacion',
-    minWidth: 170,
+    minWidth: 50,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'size',
     label: 'Tamaño\u00a0(km\u00b2)',
-    minWidth: 170,
+    minWidth: 50,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'density',
     label: 'Densidad',
-    minWidth: 170,
+    minWidth: 50,
     align: 'right',
     format: (value) => value.toFixed(2),
   },,
   {
     id: 'buttons',
     label: '',
-    minWidth: 170,
+    minWidth: 50,
     align: 'right',
    
   },
@@ -79,16 +79,17 @@ export default function StickyHeadTable() {
   };
 
   return (
+    <>
     <Paper sx={{ width: '100%', overflow: 'hidden' }} className="pt-20 pb-12">
       <TableContainer sx={{ maxHeight: 300   }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead className="w-12 h-12 rounded-full block mx-auto mb-4 bg-gradient-conic from-gradient-3 to-gradient-4">
+          <TableHead className="mx-auto mb-4 bg-gradient-conic from-gradient-3 to-gradient-4">
             <TableRow>
               {columns.map((column) => (
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                 // style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
                 </TableCell>
@@ -127,5 +128,6 @@ export default function StickyHeadTable() {
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </Paper>
+    </>
   );
 }
