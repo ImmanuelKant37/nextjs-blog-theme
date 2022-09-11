@@ -1,0 +1,6 @@
+@media (max-width: 50rem) {
+    .tableData {
+      border: 3px solid rgb(3, 3, 128);
+      max-width: 27rem
+    }
+  }

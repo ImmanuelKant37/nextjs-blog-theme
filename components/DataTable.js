@@ -63,6 +63,19 @@ function btn (id) {return <><Button color ="success" disableElevation variant="o
 const rows = [
   createData(0,'India', 'IN', 1324171354, 3287263,btn(0)),
   createData(1,'India', 'IN', 1324171354, 3287263,btn(1)),
+  createData(2,'India', 'IN', 1324171354, 3287263,btn(2)),
+  createData(3,'India', 'IN', 1324171354, 3287263,btn(3)),
+  createData(4,'India', 'IN', 1324171354, 3287263,btn(4)),  
+  createData(0,'India', 'IN', 1324171354, 3287263,btn(0)),
+  createData(1,'India', 'IN', 1324171354, 3287263,btn(1)),
+  createData(2,'India', 'IN', 1324171354, 3287263,btn(2)),
+  createData(3,'India', 'IN', 1324171354, 3287263,btn(3)),
+  createData(4,'India', 'IN', 1324171354, 3287263,btn(4)),  
+  createData(0,'India', 'IN', 1324171354, 3287263,btn(0)),
+  createData(1,'India', 'IN', 1324171354, 3287263,btn(1)),
+  createData(2,'India', 'IN', 1324171354, 3287263,btn(2)),
+  createData(3,'India', 'IN', 1324171354, 3287263,btn(3)),
+  createData(4,'India', 'IN', 1324171354, 3287263,btn(4)),  
 ];
 
 export default function StickyHeadTable() {
@@ -80,7 +93,7 @@ export default function StickyHeadTable() {
 
   return (
     <>
-    <Paper sx={{ width: '100%', overflow: 'hidden' }} className="pt-20 pb-12">
+    <Paper sx={{ width: '100%', overflow: 'auto' }} className="tableData">
       <TableContainer sx={{ maxHeight: 300   }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead className="mx-auto mb-4 bg-gradient-conic from-gradient-3 to-gradient-4">
@@ -89,7 +102,7 @@ export default function StickyHeadTable() {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                 // style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth }}
                 >
                   {column.label}
                 </TableCell>
