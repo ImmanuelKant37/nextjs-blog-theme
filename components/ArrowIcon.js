@@ -1,5 +1,8 @@
+
+
 export default function ArrowIcon({ className, color = 'text-primary' }) {
-  return (
+  return (<>
+ 
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -16,5 +19,6 @@ export default function ArrowIcon({ className, color = 'text-primary' }) {
         d="M5 12h14M12 19l7-7-7-7"
       ></path>
     </svg>
+    </>
   );
 }

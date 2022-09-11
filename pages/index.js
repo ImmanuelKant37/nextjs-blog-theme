@@ -8,6 +8,8 @@ import ArrowIcon from '../components/ArrowIcon';
 import { getGlobalData } from '../utils/global-data';
 import SEO from '../components/SEO';
 
+
+
 export default function Index({ posts, globalData }) {
   return (
     <Layout>
@@ -18,6 +20,7 @@ export default function Index({ posts, globalData }) {
           {globalData.blogTitle}
         </h1>
         <ul className="w-full">
+       
           {posts.map((post) => (
             <li
               key={post.filePath}
@@ -39,13 +42,16 @@ export default function Index({ posts, globalData }) {
                       {post.data.description}
                     </p>
                   )}
+                  
                   <ArrowIcon className="mt-4" />
                 </a>
+                
               </Link>
             </li>
           ))}
         </ul>
       </main>
+    
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground
         variant="large"
