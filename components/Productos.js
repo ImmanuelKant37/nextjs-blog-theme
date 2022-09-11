@@ -1,19 +1,23 @@
 import DataTable from 'react-data-table-component';
 import React from 'react'
-import { Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 // A super simple expandable component.
 
 const details = [
     {
         id: 1,
         provedor: 'Beetlejuice',
+        responsable:'Juancito',
+        correo:'a@a.com',
+        puntaje:0,
         fecha: '1988',
     },
     {
         id: 2,
-        provedor: 'Ghostbusters',
-        fecha: '1984',
+        provedor: 'Cheeper Scriper',
+        responsable:'Maria',
+        correo:'b@b.com',
+        puntaje:0,
+        fecha: '1970',
     },
 ]
 
@@ -21,10 +25,11 @@ const details = [
 console.log(details)
 const ExpandedComponent = ({ data }) => 
 <><div>
-<pre>Proveedor: {details[data.id-1].provedor}</pre>
-<button className='btn btn-success'>Agregar campo</button><hr></hr>
-<button className='btn btn-warning'>Editar campo</button><hr></hr>
-<button className='btn btn-danger'>Eliminar campo</button><hr></hr>
+<pre>Proveedor: {details[data.id-1].provedor}</pre><hr></hr>
+<pre>Correo: {details[data.id-1].correo}</pre><hr></hr>
+<pre>Puntaje: {details[data.id-1].puntaje}</pre><hr></hr>
+<pre>Fecha: {details[data.id-1].fecha}</pre><hr></hr>
+<pre>Responsable: {details[data.id-1].responsable}</pre><hr></hr>
 </div>
     </> 
 const columns = [
@@ -77,6 +82,7 @@ export const Productos =()=> {
     data={data}
     expandableRows
     expandableRowsComponent={ExpandedComponent}
+    rowsPerPageOptions={[10, 25, 100]}
 />
   )
 }
