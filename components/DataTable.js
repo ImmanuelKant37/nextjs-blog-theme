@@ -79,10 +79,10 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden' }} className="pt-20 pb-12">
+      <TableContainer sx={{ maxHeight: 300   }}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
+          <TableHead className="w-12 h-12 rounded-full block mx-auto mb-4 bg-gradient-conic from-gradient-3 to-gradient-4">
             <TableRow>
               {columns.map((column) => (
                 <TableCell
