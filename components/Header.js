@@ -9,6 +9,7 @@ export default function Header({ name }) {
           <a>{name}</a>
         </Link>
       </p>
+
     </header>
   );
 }

@@ -6,6 +6,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <span className="theme-bejamas" />
       <Component {...pageProps} />
+      
     </>
   );
 }
