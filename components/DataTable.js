@@ -10,6 +10,12 @@ import TableRow from '@mui/material/TableRow';
 import { Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import CreateIcon from '@mui/icons-material/Create';
+import AssignmentReturnIcon from '@mui/icons-material/AssignmentReturn';
+import ModalCreate from './ModalCreate';
+import ModalDelete from './ModalDelete';
+import ModalEdit from './ModalEdit';
 const columns = [
   { id: 'name', label: 'Nombre', minWidth: 50  , align: 'right'},
   { id: 'code', label: 'Postal', minWidth: 50 , align: 'right'},
@@ -44,19 +50,16 @@ const columns = [
 ];
 function deleteItem (id){
     console.log(id)
-    const modal = require('./Modal')
-    console.log(modal)
 }
 function createData(id,name, code, population, size,buttons) {
   const density = population / size;
   
   return {id, name, code, population, size, density,buttons};
 }
-function btn (id) {return <><Button color ="success" disableElevation variant="outlined"onClick={()=>{console.log(id)}}>Editar</Button>
-
-<IconButton aria-label="delete" size="large" color="error" onClick={()=>{deleteItem(0)}}>
-  <DeleteIcon fontSize="inherit" />
-</IconButton>
+function btn (id) {return <><ButtonGroup   variant="contained">
+    <ModalCreate></ModalCreate>
+   <ModalEdit></ModalEdit>
+   <ModalDelete></ModalDelete></ButtonGroup >
 </>
 }
 
